@@ -1,0 +1,20 @@
+
+<launch>
+    <!-- parameters -->
+    <arg name="device"          default="auto" doc="device file of the IMU"/>
+    <arg name="baudrate"        default="0"    doc="baudrate of the IMU"/>
+    <arg name="frame_id"        default="imu"  doc="frame id of the IMU"/>
+    <arg name="frame_local"     default="ENU"  doc="desired frame orientation (ENU, NED or NWU)"/>
+    <arg name="frame_local_imu" default="ENU"  doc="desired frame orientation (ENU, NED or NWU)"/>
+    <arg name="use_rostime"     default="True" doc="if we should use the ROS time or time from GPS sats."/>
+
+    <!-- node -->
+    <node pkg="xsens_driver" type="mtnode.py" name="xsens_driver" ns="mti" output="screen" >
+        <param name="device"          value="$(arg device)"/>
+        <param name="baudrate"        value="$(arg baudrate)"/>
+        <param name="frame_id"        value="$(arg frame_id)"/>
+        <param name="frame_local"     value="$(arg frame_local)"/>
+        <param name="frame_local_imu" value="$(arg frame_local)"/>
+        <param name="use_rostime"     value="$(arg use_rostime)"/>
+    </node>
+</launch>
