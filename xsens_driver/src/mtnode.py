@@ -222,8 +222,8 @@ class XSensDriver(object):
 				ss_msg.internal.imu.dv.x = acc_data['Delta v.x']
 				ss_msg.internal.imu.dv.y = acc_data['Delta v.y']
 				ss_msg.internal.imu.dv.z = acc_data['Delta v.z']
-			else:
-				raise MTException("Unsupported message in XDI_AccelerationGroup.")
+			#else:
+			#	raise MTException("Unsupported message in XDI_AccelerationGroup.")
 
 		# gyro data
 		if gyr_data:
@@ -242,8 +242,8 @@ class XSensDriver(object):
 				ss_msg.internal.imu.dq.x = gyr_data['Delta q1']
 				ss_msg.internal.imu.dq.y = gyr_data['Delta q2']
 				ss_msg.internal.imu.dq.z = gyr_data['Delta q3']
-			else:
-				raise MTException("Unsupported message in XDI_AngularVelocityGroup.")
+			#else:
+			#	raise MTException("Unsupported message in XDI_AngularVelocityGroup.")
 
 		# magfield
 		if mag_data:
